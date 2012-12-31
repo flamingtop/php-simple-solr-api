@@ -26,6 +26,15 @@ require_once(__DIR__."/QueryString.php");
  */
 class SolrAPI extends QueryString
 {
+  /**
+   * @var string Solr Service Root URL
+   */
+  public $serviceBase = NULL;
+
+  public function __construct($serviceBase='') {
+    $this->serviceBase = $serviceBase;
+  }
+
   public function toParamKey($string) {
     $key = $string;
     (strpos($string, '_') !== FALSE) && $key = str_replace("_", ".", $string);

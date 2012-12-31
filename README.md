@@ -13,7 +13,7 @@ provides. A wrapper that
 
     use SimpleSolrAPI\SolrAPI;
     
-    $api = new SimpleSolrAPI;
+    $api = new SolrAPI("http://SOLR_SERVICE_BASE_URL");
     $api->q('Carlin');  // maps to parameter 'q'
     $api->fq('occupation:comedian'); // fq
     $api->fl('name, age, awards'); // fl
